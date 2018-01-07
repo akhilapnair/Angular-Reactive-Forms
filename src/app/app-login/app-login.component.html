@@ -1,0 +1,42 @@
+<!-- <div>
+  <form [formGroup]="form" (ngSubmit)="login(form.value)">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">@</span>
+      <input type="text" class="form-control" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="sizing-addon1">
+    </div>
+    <br>
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2">@</span>
+      <input type="text" class="form-control" placeholder="Username" formControlName="password" aria-label="Username" aria-describedby="sizing-addon2">
+    </div>
+    <button type="submit">LOGIN</button>
+  </form>
+</div> -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-md-4 setww_001 login-wrap">
+    
+      <form [formGroup]="form" (ngSubmit)="login(form.value)">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="sizing-addon1">@</span>
+          <input type="text" class="form-control" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="sizing-addon1">
+        </div>
+        <br>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="sizing-addon2">@</span>
+          <input type="text" class="form-control" placeholder="Password" formControlName="password" aria-label="Username" aria-describedby="sizing-addon2">
+        </div>
+        <button class="btn btn-primary" type="submit">LOGIN</button>
+      </form>
+
+      <div class="terms-of-cond clear">Forgot password?
+        <span>Reset</span>
+      </div>
+      <div class="terms-of-cond">New around here?
+        <span [routerLink]="['/signup']">Sign up</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
