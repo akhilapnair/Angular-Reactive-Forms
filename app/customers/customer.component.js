@@ -23,6 +23,14 @@ var CustomerComponent = (function () {
             sendCatalog: new forms_1.FormControl(true)
         });
     };
+    CustomerComponent.prototype.populateData = function () {
+        this.customerForm.setValue({
+            firstName: 'akhila',
+            lastName: 'vipin',
+            email: 'akhi.p@gmail.com',
+            sendCatalog: 'true'
+        });
+    };
     CustomerComponent.prototype.save = function () {
         console.log(this.customerForm.value);
         // console.log('Saved: ' + JSON.stringify(customerForm.value));
