@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { Customer } from './customer';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'my-signup',
@@ -11,18 +11,21 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class CustomerComponent implements OnInit  {
     customerForm : FormGroup;
     customer: Customer= new Customer();
+    constructor(private fb: FormBuilder) { 
+
+    }
     ngOnInit() {
-      this.customerForm = new FormGroup( {
-        firstName: new FormControl(),
-        lastName: new FormControl(),
-        email: new FormControl(),
-        sendCatalog: new FormControl(true)
+      this.customerForm = this.fb.group( {
+        firstName: '',
+        lastName:'',
+        email:'',
+        sendCatalog: true
       });
     }
     populateData() {
-        this.customerForm .setValue( {
+        this.customerForm .patchValue( {
             firstName: 'akhila',
-            lastName: 'vipin' ,
+            // lastName: 'vipin' ,
             email: 'akhi.p@gmail.com',
             sendCatalog:'true'
           });

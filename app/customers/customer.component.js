@@ -12,21 +12,22 @@ var core_1 = require('@angular/core');
 var customer_1 = require('./customer');
 var forms_1 = require('@angular/forms');
 var CustomerComponent = (function () {
-    function CustomerComponent() {
+    function CustomerComponent(fb) {
+        this.fb = fb;
         this.customer = new customer_1.Customer();
     }
     CustomerComponent.prototype.ngOnInit = function () {
-        this.customerForm = new forms_1.FormGroup({
-            firstName: new forms_1.FormControl(),
-            lastName: new forms_1.FormControl(),
-            email: new forms_1.FormControl(),
-            sendCatalog: new forms_1.FormControl(true)
+        this.customerForm = this.fb.group({
+            firstName: '',
+            lastName: '',
+            email: '',
+            sendCatalog: true
         });
     };
     CustomerComponent.prototype.populateData = function () {
-        this.customerForm.setValue({
+        this.customerForm.patchValue({
             firstName: 'akhila',
-            lastName: 'vipin',
+            // lastName: 'vipin' ,
             email: 'akhi.p@gmail.com',
             sendCatalog: 'true'
         });
@@ -40,7 +41,7 @@ var CustomerComponent = (function () {
             selector: 'my-signup',
             templateUrl: './app/customers/customer.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [forms_1.FormBuilder])
     ], CustomerComponent);
     return CustomerComponent;
 }());
