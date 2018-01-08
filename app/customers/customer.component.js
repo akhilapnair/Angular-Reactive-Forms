@@ -10,13 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var customer_1 = require('./customer');
+var forms_1 = require('@angular/forms');
 var CustomerComponent = (function () {
     function CustomerComponent() {
         this.customer = new customer_1.Customer();
     }
-    CustomerComponent.prototype.save = function (customerForm) {
-        console.log(customerForm.form);
-        console.log('Saved: ' + JSON.stringify(customerForm.value));
+    CustomerComponent.prototype.ngOnInit = function () {
+        this.customerForm = new forms_1.FormGroup({
+            firstName: new forms_1.FormControl(),
+            lastName: new forms_1.FormControl(),
+            email: new forms_1.FormControl(),
+            sendCatalog: new forms_1.FormControl(true)
+        });
+    };
+    CustomerComponent.prototype.save = function () {
+        console.log(this.customerForm.value);
+        // console.log('Saved: ' + JSON.stringify(customerForm.value));
     };
     CustomerComponent = __decorate([
         core_1.Component({
