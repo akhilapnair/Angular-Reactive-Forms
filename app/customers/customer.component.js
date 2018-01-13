@@ -32,8 +32,8 @@ var CustomerComponent = (function () {
             sendCatalog: 'true'
         });
     };
-    CustomerComponent.prototype.save = function () {
-        console.log(this.customerForm.value);
+    CustomerComponent.prototype.save = function (data) {
+        console.log(data);
         // console.log('Saved: ' + JSON.stringify(customerForm.value));
     };
     CustomerComponent = __decorate([

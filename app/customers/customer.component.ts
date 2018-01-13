@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class CustomerComponent implements OnInit  {
     customerForm : FormGroup;
     customer: Customer= new Customer();
-    constructor(private fb: FormBuilder) { 
+    constructor(private fb: FormBuilder) {
 
     }
     ngOnInit() {
@@ -30,8 +30,8 @@ export class CustomerComponent implements OnInit  {
             sendCatalog:'true'
           });
     }
-     save() {
-        console.log(this.customerForm.value);
+     save(data: any) {
+        console.log(data);
         // console.log('Saved: ' + JSON.stringify(customerForm.value));
     }
  }

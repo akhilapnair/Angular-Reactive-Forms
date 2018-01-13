@@ -6,16 +6,17 @@
     <div class="panel-body">
         <form class="form-horizontal"
         [formGroup]="customerForm"
+        (ngSubmit)="save(customerForm.value)"
               novalidate>
             <!-- <fieldset> -->
                 <div class="form-group">
-                    <label class="col-md-2 control-label" 
+                    <label class="col-md-2 control-label"
                            for="firstNameId">First Name</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" 
-                               id="firstNameId" 
-                               type="text" 
+                        <input class="form-control"
+                               id="firstNameId"
+                               type="text"
                                placeholder="First Name (required)"
                                formControlName="firstName"  >
                         <!-- <span class="help-block" *ngIf="(firstNameVar.touched || firstNameVar.dirty) && firstNameVar.errors">
@@ -30,13 +31,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-2 control-label" 
+                    <label class="col-md-2 control-label"
                         for="lastNameId">Last Name</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" 
-                               id="lastNameId" 
-                               type="text" 
+                        <input class="form-control"
+                               id="lastNameId"
+                               type="text"
                                placeholder="Last Name (required)" formControlName="lastName" />
                         <!-- <span class="help-block" *ngIf="(lastNameVar.touched || lastNameVar.dirty) && lastNameVar.errors">
                             <span *ngIf="lastNameVar.errors.required">
@@ -47,14 +48,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-2 control-label" 
+                    <label class="col-md-2 control-label"
                         for="emailId">Email</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" 
-                               id="emailId" 
-                               type="email" 
-                               placeholder="Email (required)" 
+                        <input class="form-control"
+                               id="emailId"
+                               type="email"
+                               placeholder="Email (required)"
                                formControlName="email"  >
                         <!-- <span class="help-block" *ngIf="(emailVar.touched || emailVar.dirty) && emailVar.errors"> -->
                             <!-- <span *ngIf="emailVar.errors.required">
@@ -82,7 +83,7 @@
                         </label>
                     </div>
                 </div>
-                
+
                 <!-- <div *ngIf="customer.sendCatalog">
                     <div class="form-group" >
                         <label class="col-md-2 control-label">Address Type</label>
@@ -106,12 +107,12 @@
                     </div> -->
 
                     <!-- <div class="form-group">
-                        <label class="col-md-2 control-label" 
+                        <label class="col-md-2 control-label"
                             for="street1Id">Street Address 1</label>
                         <div class="col-md-8">
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="street1Id" 
+                            <input type="text"
+                                   class="form-control"
+                                   id="street1Id"
                                    placeholder="Street address"
                                    [(ngModel)]="customer.street1"
                                    name="street1">
@@ -119,11 +120,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label" 
+                        <label class="col-md-2 control-label"
                             for="street2Id">Street Address 2</label>
                         <div class="col-md-8">
-                            <input type="text" 
-                                   class="form-control" 
+                            <input type="text"
+                                   class="form-control"
                                    id="street2Id"
                                    placeholder="Street address (second line)"
                                    [(ngModel)]="customer.street2"
@@ -132,12 +133,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label" 
+                        <label class="col-md-2 control-label"
                             for="cityId">City, State, Zip Code</label>
                         <div class="col-md-3">
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="cityId" 
+                            <input type="text"
+                                   class="form-control"
+                                   id="cityId"
                                    placeholder="City"
                                    [(ngModel)]="customer.city"
                                    name="city">
@@ -160,8 +161,8 @@
                         </div>
                         <div class="col-md-2">
                         <input type="number"
-                                   class="form-control" 
-                                   id="zipId" 
+                                   class="form-control"
+                                   id="zipId"
                                    placeholder="Zip Code"
                                    [(ngModel)]="customer.zip"
                                    name="zip">
@@ -194,7 +195,7 @@
         </form>
     </div>
 </div>
-<br>Dirty: {{ customerForm.dirty }} 
+<br>Dirty: {{ customerForm.dirty }}
 <br>Touched: {{ customerForm.touched }}
 <br>Valid: {{ customerForm.valid }}
 <br>Value: {{ customerForm.value | json }}
