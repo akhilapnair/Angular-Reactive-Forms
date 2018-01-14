@@ -41,11 +41,12 @@
                                id="lastNameId"
                                type="text"
                                placeholder="Last Name (required)" formControlName="lastName" />
-                        <!-- <span class="help-block" *ngIf="(lastNameVar.touched || lastNameVar.dirty) && lastNameVar.errors">
-                            <span *ngIf="lastNameVar.errors.required">
+                       <span class="help-block" *ngIf="(customerForm.get('lastName').touched ||
+                                                         customerForm.get('lastName').dirty) &&
+                                                         customerForm.get('lastName').errors ">
+                            <span *ngIf="customerForm.get('lastName').errors.required"></span>
                                 Please enter your last name.
                             </span>
-                        </span> -->
                     </div>
                 </div>
 
