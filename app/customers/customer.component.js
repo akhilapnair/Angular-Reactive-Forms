@@ -18,9 +18,9 @@ var CustomerComponent = (function () {
     }
     CustomerComponent.prototype.ngOnInit = function () {
         this.customerForm = this.fb.group({
-            firstName: '',
-            lastName: '',
-            email: '',
+            firstName: ['', forms_1.Validators.required],
+            lastName: ['', forms_1.Validators.required],
+            email: ['', forms_1.Validators.required],
             sendCatalog: true
         });
     };

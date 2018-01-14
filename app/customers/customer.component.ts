@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-
 import { Customer } from './customer';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'my-signup',
@@ -16,9 +14,9 @@ export class CustomerComponent implements OnInit  {
     }
     ngOnInit() {
       this.customerForm = this.fb.group( {
-        firstName: '',
-        lastName:'',
-        email:'',
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        email:['', Validators.required],
         sendCatalog: true
       });
     }
