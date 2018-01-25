@@ -9,9 +9,41 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CustomerComponent implements OnInit  {
     customerForm : FormGroup;
     customer: Customer= new Customer();
-    constructor(private fb: FormBuilder) {
 
-    }
+    constructor(private fb: FormBuilder) {
+       let data = {
+            'data' : {
+              'address':[{
+                'address':'afdsfdsfsd',
+                'id':1
+              },
+              {
+                'address':'afdsfdsfsd sdfsfsdf sdfdsfsdfsdf',
+                'id':2
+              }],
+              'name': [{
+                  'id': 1,
+                  'name':'abc'
+              },
+              {
+                  'id': 2,
+                  'name':'abcd'
+              }]
+            }
+          }
+
+        data.data.address.map(function(obj) {
+            console.log(obj);
+            let data3 = data.data.name.filter(function (obj1){
+                return obj1.id === obj.id;
+            });
+            let objectgenerated : any = {}
+            objectgenerated.id = obj.id;
+            objectgenerated.address = obj.address
+            objectgenerated.name = data3[0].name
+            console.log(objectgenerated);
+        });
+}
     ngOnInit() {
       this.customerForm = this.fb.group( {
         firstName: ['', Validators.required],
