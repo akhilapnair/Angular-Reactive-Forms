@@ -15,6 +15,37 @@ var CustomerComponent = (function () {
     function CustomerComponent(fb) {
         this.fb = fb;
         this.customer = new customer_1.Customer();
+        var data = {
+            'data': {
+                'address': [{
+                        'address': 'afdsfdsfsd',
+                        'id': 1
+                    },
+                    {
+                        'address': 'afdsfdsfsd sdfsfsdf sdfdsfsdfsdf',
+                        'id': 2
+                    }],
+                'name': [{
+                        'id': 1,
+                        'name': 'abc'
+                    },
+                    {
+                        'id': 2,
+                        'name': 'abcd'
+                    }]
+            }
+        };
+        data.data.address.map(function (obj) {
+            console.log(obj);
+            var data3 = data.data.name.filter(function (obj1) {
+                return obj1.id === obj.id;
+            });
+            var objectgenerated = {};
+            objectgenerated.id = obj.id;
+            objectgenerated.address = obj.address;
+            objectgenerated.name = data3[0].name;
+            console.log(objectgenerated);
+        });
     }
     CustomerComponent.prototype.ngOnInit = function () {
         this.customerForm = this.fb.group({
