@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     templateUrl: './app/customers/customer.component.html'
 })
 export class CustomerComponent implements OnInit  {
+
     customerForm : FormGroup;
     customer: Customer= new Customer();
     constructor(private fb: FormBuilder) {
@@ -23,13 +24,14 @@ export class CustomerComponent implements OnInit  {
     populateData() {
         this.customerForm .patchValue( {
             firstName: 'akhila',
-            // lastName: 'vipin' ,
+            lastName: 'vipin' ,
             email: 'akhi.p@gmail.com',
             sendCatalog:'true'
           });
     }
      save(data: any) {
         console.log(data);
+
         // console.log('Saved: ' + JSON.stringify(customerForm.value));
     }
  }

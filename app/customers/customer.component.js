@@ -27,7 +27,7 @@ var CustomerComponent = (function () {
     CustomerComponent.prototype.populateData = function () {
         this.customerForm.patchValue({
             firstName: 'akhila',
-            // lastName: 'vipin' ,
+            lastName: 'vipin',
             email: 'akhi.p@gmail.com',
             sendCatalog: 'true'
         });
